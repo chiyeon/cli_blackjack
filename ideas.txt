@@ -1,0 +1,22 @@
+instead of using classes for card/deck..
+binary ?
+
+value ranges from 1-10
+thus 001 -> 1010
+
+first 4 bits are reserved for value of card
+(since ace is the only card that can equal 1, 
+we can differentiate and use 10 instead when necessary)
+
+4 different card types, we can use 3 bits to represent
+000 -> nothing
+001 (16) -> spades
+010 (32) -> diamonds
+100 (64) -> clubs
+011 (48) -> hearts
+
+or only use 2 bits ? (nah dont)
+00 -> spades
+01 -> diamonds
+11 -> clubs
+10 -> hearts
