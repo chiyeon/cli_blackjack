@@ -6,5 +6,5 @@ cli_blackjack is a singleplayer game that supports up to 5 computer controlled p
 
 There is no betting, only choosing to hit/pass
 
-### to compile in one line
+### to compile & run in one line
 `mcs -out:blackjack.exe blackjack.cs && mono blackjack.exe`
