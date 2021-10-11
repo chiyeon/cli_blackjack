@@ -1,44 +1,99 @@
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace BlackJack {
+
+    class Record {
+        /* I am currently on linux, and I'm not quite sure
+         * whether or not this works on Windows.
+         * I would instead do as we learned in the book,
+         * something like
+         * string path = “c:\\c#\blackjack_record.txt”;
+         */
+        public static string path = "./blackjack_record.txt";
+
+        public static void WriteLine(string message, params object[] args) {
+            Record.Write(message + "\n", args);
+        }
+
+        public static void Write(string message, params object[] args) {
+            
+            Console.Write(message, args);
+
+            try {
+                using(StreamWriter sw = new StreamWriter(Record.path, true)) {
+                    // constantly opening/closing sw. performance issues?
+                    // the only fix would be to not ues static classes
+                    // create one stream writer in the constructor...
+                    // close it at the end...
+                    sw.Write(message, args);
+                    sw.Close();
+                }
+            } catch(Exception e) {
+                Console.WriteLine("Stream Writer Error! {0}", e.Message);
+            }
+        }
+
+        public static string ReadLine() {
+            string input = Console.ReadLine();
+            
+            try {
+                using(StreamWriter sw = new StreamWriter(Record.path, true)) {
+                    // ReadLine skips the newline in the message
+                    // append it here !
+                    sw.Write(input + "\n");
+                    sw.Close();
+                }
+            } catch(Exception e) {
+                Console.WriteLine("Stream Writer Error! {0}", e.Message);
+            }
+
+            return input;
+        }
+    }
+
     class BlackJack {
+        
+
         public static void Main(string[] args) {
+            
+
             string playerName = "";
             int numAdditionalPlayers = 0;
             bool validNumPlayers = false;
             int numGames = 0;
             int winningGames = 0;
 
-            Console.WriteLine("====================================");
-            Console.WriteLine("   Welcome to BlackJack!");
-            Console.WriteLine("      created by Benjamin Wong");
-            Console.WriteLine("====================================");
-            Console.WriteLine("");
+            Record.WriteLine("====================================");
+            Record.WriteLine("   Welcome to BlackJack!");
+            Record.WriteLine("      created by Benjamin Wong");
+            Record.WriteLine("====================================");
+            Record.WriteLine("");
 
             string input = "";
             do {
-                Console.Write("Would you like to Play (y/n)? ");
+                Record.Write("Would you like to Play (y/n)? ");
                 try {
-                    input = Console.ReadLine().ToLower();
+                    input = Record.ReadLine().ToLower();
                     if(input == "n") {
-                        Console.WriteLine("Goodbye!");
+                        Record.WriteLine("Goodbye!");
                         return;
                     } else if (input != "y") {
-                        Console.WriteLine("Please input a valid response (y/n)!\n");
+                        Record.WriteLine("Please input a valid response (y/n)!\n");
                     }
                 } catch(Exception e) {
-                    Console.WriteLine("Error: {0} Please try again!", e.Message);
+                    Record.WriteLine("Error: {0} Please try again!", e.Message);
                 }
             } while(input != "y");
 
             do {
-                Console.Write("What is your name? ");
-                playerName = Console.ReadLine();
+                Record.Write("What is your name? ");
+                playerName = Record.ReadLine();
 
                 if(playerName == "")
-                    Console.WriteLine("Please input a valid player name!\n");
+                    Record.WriteLine("Please input a valid player name!\n");
             } while(playerName == "");
 
             bool gameOver = false;
@@ -48,68 +103,68 @@ namespace BlackJack {
                 numAdditionalPlayers = 0;
                 validNumPlayers = false;
 
-                Console.WriteLine("\n=====================================");
-                Console.WriteLine("   === GAME {0} ===", numGames);
-                Console.WriteLine("=====================================");
+                Record.WriteLine("\n=====================================");
+                Record.WriteLine("   === GAME {0} ===", numGames);
+                Record.WriteLine("=====================================");
 
-                Console.WriteLine("\nWelcome, {0}!\n", playerName);
-                Console.WriteLine("The game defaults to TWO players, You and the House.");
+                Record.WriteLine("\nWelcome, {0}!\n", playerName);
+                Record.WriteLine("The game defaults to TWO players, You and the House.");
 
                 do {
-                    Console.Write("How many additional AI players do you want? ");
+                    Record.Write("How many additional AI players do you want? ");
                     try {
-                        numAdditionalPlayers = Convert.ToInt32(Console.ReadLine());
+                        numAdditionalPlayers = Convert.ToInt32(Record.ReadLine());
                     } catch (Exception e) {
                         /* generic error catching 
                         * Format & Overflow */
-                        Console.WriteLine("Error: {0} Please try again!\n", e.Message);
+                        Record.WriteLine("Error: {0} Please try again!\n", e.Message);
                         continue;
                     }
 
                     if(numAdditionalPlayers < 0)
-                        Console.WriteLine("Please input a number 0 or more!");
+                        Record.WriteLine("Please input a number 0 or more!");
                     else if(numAdditionalPlayers > 5)
-                        Console.WriteLine("Maximum of 5 additional players allowed!\n");
+                        Record.WriteLine("Maximum of 5 additional players allowed!\n");
                     else
                         validNumPlayers = true;
                 } while (!validNumPlayers);
 
-                Console.WriteLine("Starting a game with {0} additional players...\n", numAdditionalPlayers);
+                Record.WriteLine("Starting a game with {0} additional players...\n", numAdditionalPlayers);
 
                 if(new Game(playerName, numAdditionalPlayers).Play()) {
                     winningGames++;
                 }
                 do {
-                    Console.Write("\nWould you like to play another (y/n)? ");
-                    input = Console.ReadLine().ToLower();
+                    Record.Write("\nWould you like to play another (y/n)? ");
+                    input = Record.ReadLine().ToLower();
                     if(input == "n") {
                         gameOver = true;
                         break;
                     } else if (input != "y") {
-                        Console.WriteLine("Invalid response. Please input (y/n)!");
+                        Record.WriteLine("Invalid response. Please input (y/n)!");
                     }
                 } while(input != "y");
             } while(!gameOver);
 
-            Console.WriteLine("\nToday {0}, you won {1} out of {2} games.", playerName, winningGames, numGames);
+            Record.WriteLine("\nToday {0}, you won {1} out of {2} games.", playerName, winningGames, numGames);
 
             int winRate = (int)(((float)winningGames / (float)numGames) * 100.0);
 
-            Console.Write("Thats a {0}% win rate. ", winRate);
+            Record.Write("Thats a {0}% win rate. ", winRate);
 
             if(winRate >= 90) {
-                Console.WriteLine("You are Incredible!!!");
+                Record.WriteLine("You are Incredible!!!");
             } else if(winRate >= 50) {
-                Console.WriteLine("Nice!");
+                Record.WriteLine("Nice!");
             } else if(winRate >= 25) {
-                Console.WriteLine("Better Luck Next Time!");
+                Record.WriteLine("Better Luck Next Time!");
             } else if(winRate >= 10) {
-                Console.WriteLine("We Can't All Be Winners.");
+                Record.WriteLine("We Can't All Be Winners.");
             } else {
-                Console.WriteLine("May you find better luck elsewhere.");
+                Record.WriteLine("May you find better luck elsewhere.");
             }
 
-            Console.WriteLine("Goodbye!");
+            Record.WriteLine("Goodbye!");
         }
     }
 
@@ -184,7 +239,7 @@ namespace BlackJack {
 
         public void PrintAllCards() {
             foreach(Card card in cards) {
-                Console.WriteLine(card.GetName() + ": " + card.GetGameValue());
+                Record.WriteLine(card.GetName() + ": " + card.GetGameValue());
             }
         }
 
@@ -225,22 +280,22 @@ namespace BlackJack {
             string name = this.name;
             if(isPlayer) name = "You";
             
-            Console.WriteLine("\t{0} decided to hit!", name);
+            Record.WriteLine("\t{0} decided to hit!", name);
 
             hand.Add(card);
 
-            Console.WriteLine("\t{0} received the card: {1}", name, card.GetName());
-            Console.WriteLine("\tVisible Hand Value: {0}\n", GetHandValue());
+            Record.WriteLine("\t{0} received the card: {1}", name, card.GetName());
+            Record.WriteLine("\tVisible Hand Value: {0}\n", GetHandValue());
 
             if(GetHandValue(true) > 21) {
-                Console.WriteLine("\t{0} busted!", name);
+                Record.WriteLine("\t{0} busted!", name);
                 Bust();
             }
         }
 
         public void PrintHand() {
             foreach(Card card in hand) {
-                Console.WriteLine(card.GetName());
+                Record.WriteLine(card.GetName());
             }
         }
 
@@ -317,6 +372,10 @@ namespace BlackJack {
         public AIPlayer(Card[] startingHand) {
             //foreach(Card c in startingHand)
             //    c.SetFaceUp(false);
+
+            // following assumes startingHand has 2 cards
+            startingHand[0].SetFaceUp(false);
+            startingHand[1].SetFaceUp(true);
             
             name = names[rand.Next(names.Length)];
             foreach(Card c in startingHand)
@@ -337,32 +396,32 @@ namespace BlackJack {
         }
 
         public bool Play() {
-            //Console.WriteLine("The deck has {0} cards left.", deck.cards.Count);
-            //Console.WriteLine("There are {0} players left.\n", GetNumberOfActivePlayers());
+            //Record.WriteLine("The deck has {0} cards left.", deck.cards.Count);
+            //Record.WriteLine("There are {0} players left.\n", GetNumberOfActivePlayers());
 
-            Console.WriteLine("--- House's Hand ---");
-            Console.WriteLine("\n\t{0}", players[players.Count - 1].GetHandStatus());
+            Record.WriteLine("--- House's Hand ---");
+            Record.WriteLine("\n\t{0}", players[players.Count - 1].GetHandStatus());
 
             foreach(Player p in players) {
                 if(p.isBusted)
                     continue;
 
                 if (p.GetType() == typeof(Player)) {
-                    Console.WriteLine("--- It is your turn. ---\n");
+                    Record.WriteLine("--- It is your turn. ---\n");
 
-                    Console.WriteLine("\t{0}", p.GetHandStatus());
+                    Record.WriteLine("\t{0}", p.GetHandStatus());
 
                     string input = "";
                     do {
-                        Console.Write("\tWould you like to hit (y/n)? ");
-                        input = Console.ReadLine().ToLower();
+                        Record.Write("\tWould you like to hit (y/n)? ");
+                        input = Record.ReadLine().ToLower();
 
                         if(input == "y") {
                             p.GiveCard(deck.GetTopCard(), true);
                             if(p.isBusted) {
                                 do {
-                                    Console.Write("\nWould you like to spectate the rest of this game (y/n)? ");
-                                    input = Console.ReadLine().ToLower();
+                                    Record.Write("\nWould you like to spectate the rest of this game (y/n)? ");
+                                    input = Record.ReadLine().ToLower();
                                     if(input == "n") {
                                         return false;
                                     }
@@ -370,18 +429,18 @@ namespace BlackJack {
                                 break;
                             }
                         } else {
-                            Console.WriteLine("\tYou decided to stay.");
+                            Record.WriteLine("\tYou decided to stay.");
                         }
                     } while(input != "n");
                 } else {
                     bool botHitting = true;
-                    Console.WriteLine("\n--- It is {0}'s turn. ---\n", p.name);
-                    Console.WriteLine("\t{0}", p.GetHandStatus());
+                    Record.WriteLine("\n--- It is {0}'s turn. ---\n", p.name);
+                    Record.WriteLine("\t{0}", p.GetHandStatus());
                     do {
-                        Console.WriteLine("\t{0} is thinking...", p.name);
+                        Record.WriteLine("\t{0} is thinking...", p.name);
 
                         if(p.GetHandValue(true) > 15) {
-                            Console.WriteLine("\t{0} decided to stay.", p.name);
+                            Record.WriteLine("\t{0} decided to stay.", p.name);
                             botHitting = false;
                         } else {
                             p.GiveCard(deck.GetTopCard(), false);
@@ -395,6 +454,8 @@ namespace BlackJack {
                     } while (botHitting);
 
                     // wait for user input then delete prompt when done
+                    // only Console is needed as this will be deleted later
+                    // no need to output to file
                     Console.Write("\nEnter to Continue.");
                     Console.ReadLine();
                     Console.SetCursorPosition(0, Console.CursorTop - 2);
@@ -402,12 +463,12 @@ namespace BlackJack {
                 }
             }
 
-            Console.WriteLine("\n=====================================");
-            Console.WriteLine("   === RESULTS ===");
-            Console.WriteLine("=====================================\n");
+            Record.WriteLine("\n=====================================");
+            Record.WriteLine("   === RESULTS ===");
+            Record.WriteLine("=====================================\n");
 
             int houseValue = players[players.Count - 1].GetHandValue(true);
-            Console.WriteLine("The House's hand was valued at {0}!\n", houseValue);
+            Record.WriteLine("The House's hand was valued at {0}!\n", houseValue);
 
             int count = 0;
 
@@ -416,16 +477,16 @@ namespace BlackJack {
                 where !p.isBusted && ((p.GetHandValue(true) > houseValue) || (houseValue > 21 && p.name != "The House"))
                 select p;
             
-            Console.WriteLine("=== Winners ===");
+            Record.WriteLine("=== Winners ===");
             count = 0;
             if(winners.Count() == 0) {
-                Console.Write("None\n");
+                Record.Write("None\n");
             } else {
                 foreach(Player p in winners) {
                     count++;
-                    Console.Write("{0} (Hand: {1})", p.name, p.GetHandValue(true));
+                    Record.Write("{0} (Hand: {1})", p.name, p.GetHandValue(true));
                     //if(count != winners.Count())
-                        Console.Write("\n");
+                        Record.Write("\n");
                 }
             }
 
@@ -434,16 +495,16 @@ namespace BlackJack {
                 where p.isBusted == true
                 select p;
 
-            Console.WriteLine("\n=== Busted Players ===");
+            Record.WriteLine("\n=== Busted Players ===");
             count = 0;
             if(bustedPlayers.Count() == 0) {
-                Console.Write("None\n");
+                Record.Write("None\n");
             } else {
                 foreach(Player p in bustedPlayers) {
                     count++;
-                    Console.Write("{0} (Hand: {1})", p.name, p.GetHandValue(true));
+                    Record.Write("{0} (Hand: {1})", p.name, p.GetHandValue(true));
                     //if(count != bustedPlayers.Count())
-                        Console.Write("\n");
+                        Record.Write("\n");
                 }
             }
 
@@ -452,16 +513,16 @@ namespace BlackJack {
                 where !p.isBusted && p.GetHandValue(true) <= houseValue && p.name != "The House" && houseValue <= 21
                 select p;
             
-            Console.WriteLine("\n=== Everyone Else ===");
+            Record.WriteLine("\n=== Everyone Else ===");
             count = 0;
             if(everyoneElse.Count() == 0) {
-                Console.Write("None\n");
+                Record.Write("None\n");
             } else {
                 foreach(Player p in everyoneElse) {
                     count++;
-                    Console.Write("{0} (Hand: {1})", p.name, p.GetHandValue(true));
+                    Record.Write("{0} (Hand: {1})", p.name, p.GetHandValue(true));
                     //if(count != everyoneElse.Count())
-                        Console.Write("\n");
+                        Record.Write("\n");
                 }
             }
 
