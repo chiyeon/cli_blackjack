@@ -25,6 +25,8 @@ namespace BlackJack {
                     if(input == "n") {
                         Console.WriteLine("Goodbye!");
                         return;
+                    } else if (input != "y") {
+                        Console.WriteLine("Please input a valid response (y/n)!\n");
                     }
                 } catch(Exception e) {
                     Console.WriteLine("Error: {0} Please try again!", e.Message);
@@ -394,7 +396,7 @@ namespace BlackJack {
 
                     // wait for user input then delete prompt when done
                     Console.Write("\nEnter to Continue.");
-                    string input = Console.ReadLine();
+                    Console.ReadLine();
                     Console.SetCursorPosition(0, Console.CursorTop - 2);
                     Console.Write(new string(' ', Console.WindowWidth));
                 }
