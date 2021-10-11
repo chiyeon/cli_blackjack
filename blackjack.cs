@@ -83,25 +83,25 @@ namespace BlackJack {
                     if(input == "n") {
                         gameOver = true;
                         break;
+                    } else if (input != "y") {
+                        Console.WriteLine("Invalid response. Please input (y/n)!");
                     }
                 } while(input != "y");
             } while(!gameOver);
 
-            Console.WriteLine("\nToday you won {0} out of {1} games.", winningGames, numGames);
+            Console.WriteLine("\nToday {0}, you won {1} out of {2} games.", playerName, winningGames, numGames);
 
             int winRate = (int)(((float)winningGames / (float)numGames) * 100.0);
 
             Console.Write("Thats a {0}% win rate. ", winRate);
 
-            if(winRate > 90) {
-                Console.WriteLine("You are Immaculate!!!");
-            } else if(winRate > 75) {
-                Console.WriteLine("Incredible!");
-            } else if(winRate > 5) {
+            if(winRate >= 90) {
+                Console.WriteLine("You are Incredible!!!");
+            } else if(winRate >= 50) {
                 Console.WriteLine("Nice!");
-            } else if(winRate > 25) {
+            } else if(winRate >= 25) {
                 Console.WriteLine("Better Luck Next Time!");
-            } else if(winRate > 10) {
+            } else if(winRate >= 10) {
                 Console.WriteLine("We Can't All Be Winners.");
             } else {
                 Console.WriteLine("May you find better luck elsewhere.");
@@ -391,6 +391,12 @@ namespace BlackJack {
                             }
                         }
                     } while (botHitting);
+
+                    // wait for user input then delete prompt when done
+                    Console.Write("\nEnter to Continue.");
+                    string input = Console.ReadLine();
+                    Console.SetCursorPosition(0, Console.CursorTop - 2);
+                    Console.Write(new string(' ', Console.WindowWidth));
                 }
             }
 
