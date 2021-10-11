@@ -6,11 +6,9 @@ using System.Linq;
 namespace BlackJack {
 
     class Record {
-        /* I am currently on linux, and I'm not quite sure
-         * whether or not this works on Windows.
-         * I would instead do as we learned in the book,
-         * something like
-         * string path = “c:\\c#\blackjack_record.txt”;
+        /* choosing to store to a local directory instead of
+         * global one, something like
+         * string path = “c:\\blackjack_record.txt”;
          */
         public static string path = "./blackjack_record.txt";
 
