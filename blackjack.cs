@@ -9,6 +9,7 @@ namespace BlackJack {
             int numAdditionalPlayers = 0;
             bool validNumPlayers = false;
             int numGames = 0;
+            int winningGames = 0;
 
             Console.WriteLine("====================================");
             Console.WriteLine("   Welcome to BlackJack!");
@@ -18,17 +19,17 @@ namespace BlackJack {
 
             string input = "";
             do {
-                Console.Write("Would you like to Play or Quit (p/q)? ");
+                Console.Write("Would you like to Play (y/n)? ");
                 try {
                     input = Console.ReadLine().ToLower();
-                    if(input == "q") {
+                    if(input == "n") {
                         Console.WriteLine("Goodbye!");
                         return;
                     }
                 } catch(Exception e) {
                     Console.WriteLine("Error: {0} Please try again!", e.Message);
                 }
-            } while(input != "p");
+            } while(input != "y");
 
             do {
                 Console.Write("What is your name? ");
@@ -45,8 +46,12 @@ namespace BlackJack {
                 numAdditionalPlayers = 0;
                 validNumPlayers = false;
 
+                Console.WriteLine("\n=====================================");
+                Console.WriteLine("   === GAME {0} ===", numGames);
+                Console.WriteLine("=====================================");
+
                 Console.WriteLine("\nWelcome, {0}!\n", playerName);
-                Console.WriteLine("The game defaults to TWO players, You and the House.\n");
+                Console.WriteLine("The game defaults to TWO players, You and the House.");
 
                 do {
                     Console.Write("How many additional AI players do you want? ");
@@ -55,26 +60,25 @@ namespace BlackJack {
                     } catch (Exception e) {
                         /* generic error catching 
                         * Format & Overflow */
-                        Console.WriteLine("Error: {0} Please try again!", e.Message);
+                        Console.WriteLine("Error: {0} Please try again!\n", e.Message);
                         continue;
                     }
 
                     if(numAdditionalPlayers < 0)
                         Console.WriteLine("Please input a number 0 or more!");
                     else if(numAdditionalPlayers > 5)
-                        Console.WriteLine("Maximum of 5 additional players allowed!");
+                        Console.WriteLine("Maximum of 5 additional players allowed!\n");
                     else
                         validNumPlayers = true;
                 } while (!validNumPlayers);
 
-                Console.WriteLine("Starting a game with {0} additional players...", numAdditionalPlayers);
-                Console.WriteLine("\n=====================================");
-                Console.WriteLine("   === GAME {0} ===", numGames);
-                Console.WriteLine("=====================================");
+                Console.WriteLine("Starting a game with {0} additional players...\n", numAdditionalPlayers);
 
-                new Game(playerName, numAdditionalPlayers);
+                if(new Game(playerName, numAdditionalPlayers).Play()) {
+                    winningGames++;
+                }
                 do {
-                    Console.Write("\n\nWould you like to play another (y/n)? ");
+                    Console.Write("\nWould you like to play another (y/n)? ");
                     input = Console.ReadLine().ToLower();
                     if(input == "n") {
                         gameOver = true;
@@ -83,7 +87,26 @@ namespace BlackJack {
                 } while(input != "y");
             } while(!gameOver);
 
-            Console.WriteLine("Today you played {0} games.", numGames);
+            Console.WriteLine("\nToday you won {0} out of {1} games.", winningGames, numGames);
+
+            int winRate = (int)(((float)winningGames / (float)numGames) * 100.0);
+
+            Console.Write("Thats a {0}% win rate. ", winRate);
+
+            if(winRate > 90) {
+                Console.WriteLine("You are Immaculate!!!");
+            } else if(winRate > 75) {
+                Console.WriteLine("Incredible!");
+            } else if(winRate > 5) {
+                Console.WriteLine("Nice!");
+            } else if(winRate > 25) {
+                Console.WriteLine("Better Luck Next Time!");
+            } else if(winRate > 10) {
+                Console.WriteLine("We Can't All Be Winners.");
+            } else {
+                Console.WriteLine("May you find better luck elsewhere.");
+            }
+
             Console.WriteLine("Goodbye!");
         }
     }
@@ -205,7 +228,7 @@ namespace BlackJack {
             hand.Add(card);
 
             Console.WriteLine("\t{0} received the card: {1}", name, card.GetName());
-            Console.WriteLine("\tVisible Hand Value: {0}", GetHandValue());
+            Console.WriteLine("\tVisible Hand Value: {0}\n", GetHandValue());
 
             if(GetHandValue(true) > 21) {
                 Console.WriteLine("\t{0} busted!", name);
@@ -290,8 +313,8 @@ namespace BlackJack {
         public Random rand = new Random();
 
         public AIPlayer(Card[] startingHand) {
-            foreach(Card c in startingHand)
-                c.SetFaceUp(false);
+            //foreach(Card c in startingHand)
+            //    c.SetFaceUp(false);
             
             name = names[rand.Next(names.Length)];
             foreach(Card c in startingHand)
@@ -300,106 +323,100 @@ namespace BlackJack {
     }
 
     class Game {
-        public List<Player> players = new List<Player>();
-
-        bool gameOver = false;
-        int rounds = 0;
+        private List<Player> players = new List<Player>();
+        private Deck deck;
 
         public Game(string playerName, int numAdditionalPlayers) {
-            Deck deck = new Deck(true);
-            players.Add(new House(deck.GetTopCards(2)));
+            deck = new Deck(true);
             players.Add(new Player(playerName, deck.GetTopCards(2)));
             for(int i = 0; i < numAdditionalPlayers; i++)
                 players.Add(new AIPlayer(deck.GetTopCards(2)));
+            players.Add(new House(deck.GetTopCards(2)));
+        }
 
-            do {
-                // default to true, set to false when anyone hits
-                gameOver = true;
+        public bool Play() {
+            //Console.WriteLine("The deck has {0} cards left.", deck.cards.Count);
+            //Console.WriteLine("There are {0} players left.\n", GetNumberOfActivePlayers());
 
-                rounds++;
+            Console.WriteLine("--- House's Hand ---");
+            Console.WriteLine("\n\t{0}", players[players.Count - 1].GetHandStatus());
 
-                Console.WriteLine("\n=== ROUND {0} ===", rounds);
-                Console.WriteLine("The deck has {0} cards left.", deck.cards.Count);
-                Console.WriteLine("There are {0} players left.\n", GetNumberOfActivePlayers());
+            foreach(Player p in players) {
+                if(p.isBusted)
+                    continue;
 
-                foreach(Player p in players) {
-                    if(p.isBusted)
-                        continue;
-                    if (p.GetType() == typeof(Player)) {
-                        Console.WriteLine("\n--- It is your turn. ---\n");
+                if (p.GetType() == typeof(Player)) {
+                    Console.WriteLine("--- It is your turn. ---\n");
 
-                        Console.WriteLine("\t{0}", p.GetHandStatus());
+                    Console.WriteLine("\t{0}", p.GetHandStatus());
 
-                        string input = "";
-                        do {
-                            Console.Write("\tWould you like to hit (y/n)? ");
-                            input = Console.ReadLine().ToLower();
+                    string input = "";
+                    do {
+                        Console.Write("\tWould you like to hit (y/n)? ");
+                        input = Console.ReadLine().ToLower();
 
-                            if(input == "y") {
-                                p.GiveCard(deck.GetTopCard(), true);
-                                if(p.isBusted) {
-                                    do {
-                                        Console.Write("\nWould you like to spectate the rest of this game (y/n)? ");
-                                        input = Console.ReadLine().ToLower();
-                                        if(input == "n") {
-                                            return;
-                                        }
-                                    } while(input != "y");
-                                    gameOver = true;
-                                    break;
-                                }
-
-                                gameOver = false;
+                        if(input == "y") {
+                            p.GiveCard(deck.GetTopCard(), true);
+                            if(p.isBusted) {
+                                do {
+                                    Console.Write("\nWould you like to spectate the rest of this game (y/n)? ");
+                                    input = Console.ReadLine().ToLower();
+                                    if(input == "n") {
+                                        return false;
+                                    }
+                                } while(input != "y");
                                 break;
-                            } else {
-                                Console.WriteLine("\tYou decided to stay.");
                             }
-                        } while(input != "n");
-                    } else {
-                        Console.WriteLine("\n--- It is {0}'s turn. ---\n", p.name);
-                        Console.WriteLine("\t{0}", p.GetHandStatus());
+                        } else {
+                            Console.WriteLine("\tYou decided to stay.");
+                        }
+                    } while(input != "n");
+                } else {
+                    bool botHitting = true;
+                    Console.WriteLine("\n--- It is {0}'s turn. ---\n", p.name);
+                    Console.WriteLine("\t{0}", p.GetHandStatus());
+                    do {
                         Console.WriteLine("\t{0} is thinking...", p.name);
 
                         if(p.GetHandValue(true) > 15) {
                             Console.WriteLine("\t{0} decided to stay.", p.name);
+                            botHitting = false;
                         } else {
                             p.GiveCard(deck.GetTopCard(), false);
                             if(p.isBusted) {
+                                botHitting = false;
                                 if(p.GetType() == typeof(House) || GetNumberOfActivePlayers() == 1) {
                                     break;
                                 }
                             }
-
-                            gameOver = false;
                         }
-                    }
+                    } while (botHitting);
                 }
-            } while(!gameOver);
+            }
 
             Console.WriteLine("\n=====================================");
             Console.WriteLine("   === RESULTS ===");
             Console.WriteLine("=====================================\n");
-            Console.WriteLine("The game has ended after {0} rounds!\n", rounds);
 
-            int houseValue = players[0].GetHandValue(true);
+            int houseValue = players[players.Count - 1].GetHandValue(true);
             Console.WriteLine("The House's hand was valued at {0}!\n", houseValue);
 
             int count = 0;
 
             var winners = 
                 from p in players
-                where (p.GetHandValue(true) > houseValue && !p.isBusted) || (houseValue > 21 && p.name != "The House")
+                where !p.isBusted && ((p.GetHandValue(true) > houseValue) || (houseValue > 21 && p.name != "The House"))
                 select p;
             
             Console.WriteLine("=== Winners ===");
             count = 0;
             if(winners.Count() == 0) {
-                Console.Write("None");
+                Console.Write("None\n");
             } else {
                 foreach(Player p in winners) {
                     count++;
                     Console.Write("{0} (Hand: {1})", p.name, p.GetHandValue(true));
-                    if(count != winners.Count())
+                    //if(count != winners.Count())
                         Console.Write("\n");
                 }
             }
@@ -409,15 +426,15 @@ namespace BlackJack {
                 where p.isBusted == true
                 select p;
 
-            Console.WriteLine("\n\n=== Busted Players ===");
+            Console.WriteLine("\n=== Busted Players ===");
             count = 0;
             if(bustedPlayers.Count() == 0) {
-                Console.Write("None");
+                Console.Write("None\n");
             } else {
                 foreach(Player p in bustedPlayers) {
                     count++;
                     Console.Write("{0} (Hand: {1})", p.name, p.GetHandValue(true));
-                    if(count != bustedPlayers.Count())
+                    //if(count != bustedPlayers.Count())
                         Console.Write("\n");
                 }
             }
@@ -427,17 +444,23 @@ namespace BlackJack {
                 where !p.isBusted && p.GetHandValue(true) <= houseValue && p.name != "The House" && houseValue <= 21
                 select p;
             
-            Console.WriteLine("\n\n=== Everyone Else ===");
+            Console.WriteLine("\n=== Everyone Else ===");
             count = 0;
             if(everyoneElse.Count() == 0) {
-                Console.Write("None");
+                Console.Write("None\n");
             } else {
                 foreach(Player p in everyoneElse) {
                     count++;
                     Console.Write("{0} (Hand: {1})", p.name, p.GetHandValue(true));
-                    if(count != everyoneElse.Count())
+                    //if(count != everyoneElse.Count())
                         Console.Write("\n");
                 }
+            }
+
+            if(winners.Contains(players[0])) {
+                return true;
+            } else {
+                return false;
             }
         }
 
