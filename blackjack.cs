@@ -188,7 +188,10 @@ namespace BlackJack {
             if (value == Value.Ace) {
                 return 11;
             } else {
-                return Math.Clamp((int)value + 1, 1, 10);
+                // this requires .NET Core 2.0
+                // not on windows by default
+                // return Math.Clamp((int)value + 1, 1, 10);
+                return (int)value + 1 > 10 ? 10 : (int)value + 1;
             }
         }
 
