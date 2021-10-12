@@ -163,6 +163,8 @@ namespace BlackJack {
             }
 
             Record.WriteLine("Goodbye!");
+            Console.ReadLine();
+            // wait for user to quit
         }
     }
 
@@ -429,8 +431,10 @@ namespace BlackJack {
                                 } while(input != "y");
                                 break;
                             }
-                        } else {
+                        } else if(input == "n") {
                             Record.WriteLine("\tYou decided to stay.");
+                        } else {
+                            Record.WriteLine("Invalid input!\n");
                         }
                     } while(input != "n");
                 } else {
@@ -457,9 +461,16 @@ namespace BlackJack {
                     // wait for user input then delete prompt when done
                     // only Console is needed as this will be deleted later
                     // no need to output to file
+                    // 
+                    // after testing, the windows command line seems to need
+                    // the cursor position to be one lower than on linux cli
                     Console.Write("\nEnter to Continue.");
                     Console.ReadLine();
-                    Console.SetCursorPosition(0, Console.CursorTop - 2);
+                    if(Environment.OSVersion.Platform.ToString() == "Win32NT") {
+                        Console.SetCursorPosition(0, Console.CursorTop - 3);
+                    } else {
+                        Console.SetCursorPosition(0, Console.CursorTop - 2);
+                    }
                     Console.Write(new string(' ', Console.WindowWidth));
                 }
             }
