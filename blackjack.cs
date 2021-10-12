@@ -451,7 +451,7 @@ namespace BlackJack {
                         } else if(input == "n") {
                             Record.WriteLine("\tYou decided to stay.");
                         } else {
-                            Record.WriteLine("Invalid input!\n");
+                            Record.WriteLine("\tInvalid input!\n");
                         }
                     } while(input != "n");
                 // computer controller bot.
@@ -497,9 +497,9 @@ namespace BlackJack {
 
             // game over
 
-            Record.WriteLine("\n---------------");
-            Record.WriteLine("--- RESULTS ---");
-            Record.WriteLine("---------------\n");
+            Record.WriteLine("\n-------------------");
+            Record.WriteLine("----- RESULTS -----");
+            Record.WriteLine("-------------------\n");
 
             // house hand
             int houseValue = players[players.Count - 1].GetHandValue(true);
