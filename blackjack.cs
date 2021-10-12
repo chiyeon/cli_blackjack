@@ -1,3 +1,13 @@
+/* blackjack.cs
+ * by Benjamin Wong
+ * October 11, 2021
+ * GDIM31
+ *
+ * a simple cli blackjack in c#
+ * allows player to play against a House and up to 5 computer-controller players
+ * outputs to a local flie
+ */
+
 using System;
 using System.IO;
 using System.Collections.Generic;
