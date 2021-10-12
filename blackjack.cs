@@ -370,7 +370,6 @@ namespace BlackJack {
             "Gabe Newell",
             "Donald Bren"
         };
-        public Random rand = new Random();
 
         public AIPlayer(Card[] startingHand) {
             //foreach(Card c in startingHand)
@@ -380,6 +379,7 @@ namespace BlackJack {
             startingHand[0].SetFaceUp(false);
             startingHand[1].SetFaceUp(true);
             
+            Random rand = new Random(Guid.NewGuid().GetHashCode());
             name = names[rand.Next(names.Length)];
             foreach(Card c in startingHand)
                 hand.Add(c);

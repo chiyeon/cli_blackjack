@@ -851,3 +851,289 @@ Starting a game with 4 additional players...
 
 	Daniel is thinking...
 	Daniel decided to stay.
+====================================
+   Welcome to BlackJack!
+      created by Benjamin Wong
+====================================
+
+Would you like to Play (y/n)? y
+What is your name? 5
+
+=====================================
+   === GAME 1 ===
+=====================================
+
+Welcome, 5!
+
+The game defaults to TWO players, You and the House.
+How many additional AI players do you want? 5
+Starting a game with 5 additional players...
+
+--- House's Hand ---
+
+	The House's hand: Face down Card, Ace of Diamonds (Visible Value: 11)
+
+--- It is your turn. ---
+
+	5's hand: Three of Diamonds, Nine of Hearts (Visible Value: 12)
+
+	Would you like to hit (y/n)? n
+	You decided to stay.
+
+--- It is Shri's turn. ---
+
+	Shri's hand: Face down Card, Jack of Diamonds (Visible Value: 10)
+
+	Shri is thinking...
+	Shri decided to hit!
+	Shri received the card: Nine of Clubs
+	Visible Hand Value: 19
+
+	Shri busted!
+
+--- It is Gabe Newell's turn. ---
+
+	Gabe Newell's hand: Face down Card, Seven of Spades (Visible Value: 7)
+
+	Gabe Newell is thinking...
+	Gabe Newell decided to hit!
+	Gabe Newell received the card: Ten of Hearts
+	Visible Hand Value: 17
+
+	Gabe Newell is thinking...
+	Gabe Newell decided to stay.
+
+--- It is Warat's turn. ---
+
+	Warat's hand: Face down Card, Jack of Hearts (Visible Value: 10)
+
+	Warat is thinking...
+	Warat decided to stay.
+
+--- It is Donald Bren's turn. ---
+
+	Donald Bren's hand: Face down Card, Queen of Diamonds (Visible Value: 10)
+
+	Donald Bren is thinking...
+	Donald Bren decided to stay.
+
+--- It is Milan's turn. ---
+
+	Milan's hand: Face down Card, Four of Spades (Visible Value: 4)
+
+	Milan is thinking...
+	Milan decided to hit!
+	Milan received the card: Jack of Spades
+	Visible Hand Value: 14
+
+	Milan busted!
+
+--- It is The House's turn. ---
+
+	The House's hand: Face down Card, Ace of Diamonds (Visible Value: 11)
+
+	The House is thinking...
+	The House decided to hit!
+	The House received the card: Seven of Diamonds
+	Visible Hand Value: 18
+
+	The House is thinking...
+	The House decided to stay.
+
+=====================================
+   === RESULTS ===
+=====================================
+
+The House's hand was valued at 20!
+
+=== Winners ===
+Warat (Hand: 21)
+
+=== Busted Players ===
+Shri (Hand: 24)
+Milan (Hand: 24)
+
+=== Everyone Else ===
+5 (Hand: 12)
+Gabe Newell (Hand: 20)
+Donald Bren (Hand: 16)
+
+Would you like to play another (y/n)? n
+
+Today 5, you won 0 out of 1 games.
+Thats a 0% win rate. May you find better luck elsewhere.
+Goodbye!
+====================================
+   Welcome to BlackJack!
+      created by Benjamin Wong
+====================================
+
+Would you like to Play (y/n)? y
+What is your name? Ben
+
+=====================================
+   === GAME 1 ===
+=====================================
+
+Welcome, Ben!
+
+The game defaults to TWO players, You and the House.
+How many additional AI players do you want? 55
+Maximum of 5 additional players allowed!
+
+How many additional AI players do you want? 5
+Starting a game with 5 additional players...
+
+--- House's Hand ---
+
+	The House's hand: Face down Card, Ace of Hearts (Visible Value: 11)
+
+--- It is your turn. ---
+
+	Ben's hand: Three of Clubs, Queen of Spades (Visible Value: 13)
+
+	Would you like to hit (y/n)? n
+	You decided to stay.
+
+--- It is Daniel's turn. ---
+
+	Daniel's hand: Face down Card, Two of Spades (Visible Value: 2)
+
+	Daniel is thinking...
+	Daniel decided to hit!
+	Daniel received the card: Nine of Diamonds
+	Visible Hand Value: 11
+
+	Daniel is thinking...
+	Daniel decided to hit!
+	Daniel received the card: Seven of Diamonds
+	Visible Hand Value: 18
+
+	Daniel is thinking...
+	Daniel decided to stay.
+
+--- It is Miles's turn. ---
+
+	Miles's hand: Face down Card, Two of Hearts (Visible Value: 2)
+
+	Miles is thinking...
+	Miles decided to hit!
+	Miles received the card: Eight of Hearts
+	Visible Hand Value: 10
+
+	Miles is thinking...
+	Miles decided to stay.
+
+--- It is Kai's turn. ---
+
+	Kai's hand: Face down Card, Three of Diamonds (Visible Value: 3)
+
+	Kai is thinking...
+	Kai decided to hit!
+	Kai received the card: Eight of Spades
+	Visible Hand Value: 11
+
+	Kai is thinking...
+	Kai decided to stay.
+
+--- It is Shri's turn. ---
+
+	Shri's hand: Face down Card, Six of Clubs (Visible Value: 6)
+
+	Shri is thinking...
+	Shri decided to hit!
+	Shri received the card: Jack of Hearts
+	Visible Hand Value: 16
+
+	Shri is thinking...
+	Shri decided to stay.
+
+--- It is Gabe Newell's turn. ---
+
+	Gabe Newell's hand: Face down Card, Five of Clubs (Visible Value: 5)
+
+	Gabe Newell is thinking...
+	Gabe Newell decided to hit!
+	Gabe Newell received the card: Jack of Spades
+	Visible Hand Value: 15
+
+	Gabe Newell busted!
+====================================
+   Welcome to BlackJack!
+      created by Benjamin Wong
+====================================
+
+Would you like to Play (y/n)? y
+What is your name? Ben
+
+=====================================
+   === GAME 1 ===
+=====================================
+
+Welcome, Ben!
+
+The game defaults to TWO players, You and the House.
+How many additional AI players do you want? 5
+Starting a game with 5 additional players...
+
+--- House's Hand ---
+
+	The House's hand: Face down Card, Two of Hearts (Visible Value: 2)
+
+--- It is your turn. ---
+
+	Ben's hand: Two of Diamonds, Three of Spades (Visible Value: 5)
+
+	Would you like to hit (y/n)? n
+	You decided to stay.
+
+--- It is Donald Bren's turn. ---
+
+	Donald Bren's hand: Face down Card, Ten of Diamonds (Visible Value: 10)
+
+	Donald Bren is thinking...
+	Donald Bren decided to hit!
+	Donald Bren received the card: Queen of Diamonds
+	Visible Hand Value: 20
+
+	Donald Bren busted!
+
+--- It is Milan's turn. ---
+
+	Milan's hand: Face down Card, Ace of Hearts (Visible Value: 11)
+
+	Milan is thinking...
+	Milan decided to hit!
+	Milan received the card: Six of Clubs
+	Visible Hand Value: 17
+
+	Milan is thinking...
+	Milan decided to stay.
+
+--- It is Donald Bren's turn. ---
+
+	Donald Bren's hand: Face down Card, Queen of Clubs (Visible Value: 10)
+
+	Donald Bren is thinking...
+	Donald Bren decided to hit!
+	Donald Bren received the card: Ace of Spades
+	Visible Hand Value: 21
+
+	Donald Bren is thinking...
+	Donald Bren decided to hit!
+	Donald Bren received the card: Five of Clubs
+	Visible Hand Value: 16
+
+	Donald Bren is thinking...
+	Donald Bren decided to stay.
+
+--- It is Shri's turn. ---
+
+	Shri's hand: Face down Card, Nine of Hearts (Visible Value: 9)
+
+	Shri is thinking...
+	Shri decided to hit!
+	Shri received the card: Eight of Hearts
+	Visible Hand Value: 17
+
+	Shri busted!
