@@ -18,199 +18,72 @@ Starting a game with 5 additional players...
 
 --- House's Hand ---
 
-	The House's hand: Face down Card, Two of Clubs (Visible Value: 2)
+	The House's hand: Face down Card, Nine of Hearts (Visible Value: 9)
 
 --- It is your turn. ---
 
-	Benjamin's hand: Four of Spades, Five of Clubs (Visible Value: 9)
-
-	Would you like to hit (y/n)? y
-	You decided to hit!
-	You received the card: Two of Spades
-	Visible Hand Value: 11
-
-	Would you like to hit (y/n)? y
-	You decided to hit!
-	You received the card: Seven of Diamonds
-	Visible Hand Value: 18
-
-	Would you like to hit (y/n)? y
-	You decided to hit!
-	You received the card: Jack of Spades
-	Visible Hand Value: 28
-
-	You busted!
-
-Would you like to spectate the rest of this game (y/n)? n
-
-Would you like to play another (y/n)? y
-
-=====================================
-   === GAME 2 ===
-=====================================
-
-Welcome, Benjamin!
-
-The game defaults to TWO players, You and the House.
-How many additional AI players do you want? 3
-Starting a game with 3 additional players...
-
---- House's Hand ---
-
-	The House's hand: Face down Card, Nine of Clubs (Visible Value: 9)
-
---- It is your turn. ---
-
-	Benjamin's hand: Four of Hearts, Nine of Hearts (Visible Value: 13)
-
-	Would you like to hit (y/n)? y
-	You decided to hit!
-	You received the card: Six of Clubs
-	Visible Hand Value: 19
+	Benjamin's hand: Jack of Clubs, Nine of Spades (Visible Value: 19)
 
 	Would you like to hit (y/n)? n
 	You decided to stay.
 
+--- It is Gabe Newell's turn. ---
+
+	Gabe Newell's hand: Face down Card, Six of Hearts (Visible Value: 6)
+
+	Gabe Newell is thinking...
+	Gabe Newell decided to hit!
+	Gabe Newell received the card: Two of Spades
+	Visible Hand Value: 8
+
+	Gabe Newell is thinking...
+	Gabe Newell decided to hit!
+	Gabe Newell received the card: Eight of Hearts
+	Visible Hand Value: 16
+
+	Gabe Newell is thinking...
+	Gabe Newell decided to stay.
+
+--- It is Donald Bren's turn. ---
+
+	Donald Bren's hand: Face down Card, Seven of Spades (Visible Value: 7)
+
+	Donald Bren is thinking...
+	Donald Bren decided to hit!
+	Donald Bren received the card: Three of Clubs
+	Visible Hand Value: 10
+
+	Donald Bren is thinking...
+	Donald Bren decided to hit!
+	Donald Bren received the card: King of Diamonds
+	Visible Hand Value: 20
+
+	Donald Bren busted!
+
+--- It is Warat's turn. ---
+
+	Warat's hand: Face down Card, Ten of Spades (Visible Value: 10)
+
+	Warat is thinking...
+	Warat decided to stay.
+
 --- It is Miles's turn. ---
 
-	Miles's hand: Face down Card, King of Diamonds (Visible Value: 10)
+	Miles's hand: Face down Card, Ace of Hearts (Visible Value: 11)
 
 	Miles is thinking...
 	Miles decided to stay.
 
---- It is Kai's turn. ---
+--- It is Professor Allison's turn. ---
 
-	Kai's hand: Face down Card, Eight of Spades (Visible Value: 8)
+	Professor Allison's hand: Face down Card, Ten of Diamonds (Visible Value: 10)
 
-	Kai is thinking...
-	Kai decided to stay.
-
---- It is Shri's turn. ---
-
-	Shri's hand: Face down Card, Three of Hearts (Visible Value: 3)
-
-	Shri is thinking...
-	Shri decided to hit!
-	Shri received the card: Five of Clubs
-	Visible Hand Value: 8
-
-	Shri is thinking...
-	Shri decided to stay.
+	Professor Allison is thinking...
+	Professor Allison decided to stay.
 
 --- It is The House's turn. ---
 
-	The House's hand: Face down Card, Nine of Clubs (Visible Value: 9)
-
-	The House is thinking...
-	The House decided to stay.
-
-=====================================
-   === RESULTS ===
-=====================================
-
-The House's hand was valued at 19!
-
-=== Winners ===
-None
-
-=== Busted Players ===
-None
-
-=== Everyone Else ===
-Benjamin (Hand: 19)
-Miles (Hand: 17)
-Kai (Hand: 18)
-Shri (Hand: 18)
-
-Would you like to play another (y/n)? y
-
-=====================================
-   === GAME 3 ===
-=====================================
-
-Welcome, Benjamin!
-
-The game defaults to TWO players, You and the House.
-How many additional AI players do you want? 5
-Starting a game with 5 additional players...
-
---- House's Hand ---
-
-	The House's hand: Face down Card, Queen of Diamonds (Visible Value: 10)
-
---- It is your turn. ---
-
-	Benjamin's hand: Ten of Diamonds, Nine of Spades (Visible Value: 19)
-
-	Would you like to hit (y/n)? n
-	You decided to stay.
-
---- It is Justin's turn. ---
-
-	Justin's hand: Face down Card, Three of Spades (Visible Value: 3)
-
-	Justin is thinking...
-	Justin decided to hit!
-	Justin received the card: Six of Clubs
-	Visible Hand Value: 9
-
-	Justin is thinking...
-	Justin decided to stay.
-
---- It is Kai's turn. ---
-
-	Kai's hand: Face down Card, Ace of Hearts (Visible Value: 11)
-
-	Kai is thinking...
-	Kai decided to stay.
-
---- It is Daniel's turn. ---
-
-	Daniel's hand: Face down Card, Three of Clubs (Visible Value: 3)
-
-	Daniel is thinking...
-	Daniel decided to hit!
-	Daniel received the card: King of Hearts
-	Visible Hand Value: 13
-
-	Daniel busted!
-
---- It is Justin's turn. ---
-
-	Justin's hand: Face down Card, Four of Diamonds (Visible Value: 4)
-
-	Justin is thinking...
-	Justin decided to hit!
-	Justin received the card: Five of Spades
-	Visible Hand Value: 9
-
-	Justin is thinking...
-	Justin decided to hit!
-	Justin received the card: Seven of Clubs
-	Visible Hand Value: 16
-
-	Justin is thinking...
-	Justin decided to stay.
-
---- It is Warat's turn. ---
-
-	Warat's hand: Face down Card, Eight of Clubs (Visible Value: 8)
-
-	Warat is thinking...
-	Warat decided to hit!
-	Warat received the card: Ace of Diamonds
-	Visible Hand Value: 19
-
-	Warat is thinking...
-	Warat decided to hit!
-	Warat received the card: Queen of Hearts
-	Visible Hand Value: 19
-
-	Warat busted!
-
---- It is The House's turn. ---
-
-	The House's hand: Face down Card, Queen of Diamonds (Visible Value: 10)
+	The House's hand: Face down Card, Nine of Hearts (Visible Value: 9)
 
 	The House is thinking...
 	The House decided to stay.
@@ -223,35 +96,23 @@ The House's hand was valued at 16!
 
 === Winners ===
 Benjamin (Hand: 19)
-Justin (Hand: 19)
-Kai (Hand: 18)
-Justin (Hand: 21)
+Gabe Newell (Hand: 18)
+Miles (Hand: 21)
+Professor Allison (Hand: 21)
 
 === Busted Players ===
-Daniel (Hand: 22)
-Warat (Hand: 23)
+Donald Bren (Hand: 25)
 
 === Everyone Else ===
-None
+Warat (Hand: 16)
 
-Would you like to play another (y/n)? n
-
-Today Benjamin, you won 1 out of 3 games.
-Thats a 33% win rate. Better Luck Next Time!
-Goodbye!
-====================================
-   Welcome to BlackJack!
-      created by Benjamin Wong
-====================================
-
-Would you like to Play (y/n)? y
-What is your name? Ben
+Would you like to play another (y/n)? y
 
 =====================================
-   === GAME 1 ===
+   === GAME 2 ===
 =====================================
 
-Welcome, Ben!
+Welcome, Benjamin!
 
 The game defaults to TWO players, You and the House.
 How many additional AI players do you want? 5
@@ -259,453 +120,58 @@ Starting a game with 5 additional players...
 
 --- House's Hand ---
 
-	The House's hand: Face down Card, King of Diamonds (Visible Value: 10)
+	The House's hand: Face down Card, Eight of Diamonds (Visible Value: 8)
 
 --- It is your turn. ---
 
-	Ben's hand: Nine of Clubs, Two of Diamonds (Visible Value: 11)
+	Benjamin's hand: Seven of Clubs, Six of Clubs (Visible Value: 13)
 
 	Would you like to hit (y/n)? y
 	You decided to hit!
-	You received the card: Ten of Spades
-	Visible Hand Value: 21
+	You received the card: Six of Spades
+	Visible Hand Value: 19
 
-	Would you like to hit (y/n)? n
-	You decided to stay.
+	Would you like to hit (y/n)? y
+	You decided to hit!
+	You received the card: Nine of Diamonds
+	Visible Hand Value: 28
 
---- It is Izzy's turn. ---
+	You busted!
 
-	Izzy's hand: Face down Card, Three of Hearts (Visible Value: 3)
+Would you like to spectate the rest of this game (y/n)? n
 
-	Izzy is thinking...
-	Izzy decided to hit!
-	Izzy received the card: Five of Clubs
+Would you like to play another (y/n)? y
+
+=====================================
+   === GAME 3 ===
+=====================================
+
+Welcome, Benjamin!
+
+The game defaults to TWO players, You and the House.
+How many additional AI players do you want? 1
+Starting a game with 1 additional players...
+
+--- House's Hand ---
+
+	The House's hand: Face down Card, Jack of Spades (Visible Value: 10)
+
+--- It is your turn. ---
+
+	Benjamin's hand: Two of Hearts, Three of Spades (Visible Value: 5)
+
+	Would you like to hit (y/n)? y
+	You decided to hit!
+	You received the card: Three of Diamonds
 	Visible Hand Value: 8
 
-	Izzy is thinking...
-	Izzy decided to stay.
-
---- It is Gabe Newell's turn. ---
-
-	Gabe Newell's hand: Face down Card, Eight of Hearts (Visible Value: 8)
-
-	Gabe Newell is thinking...
-	Gabe Newell decided to hit!
-	Gabe Newell received the card: Seven of Spades
-	Visible Hand Value: 15
-
-	Gabe Newell busted!
-
---- It is Kai's turn. ---
-
-	Kai's hand: Face down Card, Queen of Spades (Visible Value: 10)
-
-	Kai is thinking...
-	Kai decided to stay.
-
---- It is Professor Allison's turn. ---
-
-	Professor Allison's hand: Face down Card, Six of Diamonds (Visible Value: 6)
-
-	Professor Allison is thinking...
-	Professor Allison decided to hit!
-	Professor Allison received the card: Jack of Spades
+	Would you like to hit (y/n)? y
+	You decided to hit!
+	You received the card: Eight of Hearts
 	Visible Hand Value: 16
 
-	Professor Allison is thinking...
-	Professor Allison decided to stay.
-
---- It is Izzy's turn. ---
-
-	Izzy's hand: Face down Card, Three of Diamonds (Visible Value: 3)
-
-	Izzy is thinking...
-	Izzy decided to hit!
-	Izzy received the card: Ten of Clubs
-	Visible Hand Value: 13
-
-	Izzy is thinking...
-	Izzy decided to stay.
-
---- It is The House's turn. ---
-
-	The House's hand: Face down Card, King of Diamonds (Visible Value: 10)
-
-	The House is thinking...
-	The House decided to hit!
-	The House received the card: Eight of Spades
-	Visible Hand Value: 18
-
-	The House busted!
-
-=====================================
-   === RESULTS ===
-=====================================
-
-The House's hand was valued at 22!
-
-=== Winners ===
-Ben (Hand: 21)
-Izzy (Hand: 18)
-Kai (Hand: 20)
-Professor Allison (Hand: 18)
-Izzy (Hand: 19)
-
-=== Busted Players ===
-Gabe Newell (Hand: 22)
-The House (Hand: 22)
-
-=== Everyone Else ===
-None
-
-Would you like to play another (y/n)? n
-
-Today Ben, you won 1 out of 1 games.
-Thats a 100% win rate. You are Incredible!!!
-Goodbye!
-====================================
-   Welcome to BlackJack!
-      created by Benjamin Wong
-====================================
-
-Would you like to Play (y/n)? y
-What is your name? Ben
-
-=====================================
-   === GAME 1 ===
-=====================================
-
-Welcome, Ben!
-
-The game defaults to TWO players, You and the House.
-How many additional AI players do you want? 5
-Starting a game with 5 additional players...
-
---- House's Hand ---
-
-	The House's hand: Face down Card, Seven of Diamonds (Visible Value: 7)
-
---- It is your turn. ---
-
-	Ben's hand: Five of Hearts, Nine of Clubs (Visible Value: 14)
-
 	Would you like to hit (y/n)? n
 	You decided to stay.
-
---- It is Shri's turn. ---
-
-	Shri's hand: Face down Card, Eight of Diamonds (Visible Value: 8)
-
-	Shri is thinking...
-	Shri decided to hit!
-	Shri received the card: Ten of Spades
-	Visible Hand Value: 18
-
-	Shri busted!
-
---- It is Daniel's turn. ---
-
-	Daniel's hand: Face down Card, Jack of Hearts (Visible Value: 10)
-
-	Daniel is thinking...
-	Daniel decided to hit!
-	Daniel received the card: Ace of Hearts
-	Visible Hand Value: 21
-
-	Daniel is thinking...
-	Daniel decided to hit!
-	Daniel received the card: King of Clubs
-	Visible Hand Value: 21
-
-	Daniel busted!
-
---- It is Daniel's turn. ---
-
-	Daniel's hand: Face down Card, Five of Clubs (Visible Value: 5)
-
-	Daniel is thinking...
-	Daniel decided to hit!
-	Daniel received the card: Two of Clubs
-	Visible Hand Value: 7
-
-	Daniel is thinking...
-	Daniel decided to hit!
-	Daniel received the card: Nine of Diamonds
-	Visible Hand Value: 16
-
-	Daniel busted!
-====================================
-   Welcome to BlackJack!
-      created by Benjamin Wong
-====================================
-
-Would you like to Play (y/n)? y
-What is your name? Ben
-
-=====================================
-   === GAME 1 ===
-=====================================
-
-Welcome, Ben!
-
-The game defaults to TWO players, You and the House.
-How many additional AI players do you want? 5
-Starting a game with 5 additional players...
-
---- House's Hand ---
-
-	The House's hand: Face down Card, Eight of Clubs (Visible Value: 8)
-
---- It is your turn. ---
-
-	Ben's hand: Nine of Spades, Ten of Spades (Visible Value: 19)
-
-	Would you like to hit (y/n)? n
-	You decided to stay.
-
---- It is Kai's turn. ---
-
-	Kai's hand: Face down Card, Four of Diamonds (Visible Value: 4)
-
-	Kai is thinking...
-	Kai decided to hit!
-	Kai received the card: Four of Clubs
-	Visible Hand Value: 8
-
-	Kai is thinking...
-	Kai decided to hit!
-	Kai received the card: Jack of Clubs
-	Visible Hand Value: 18
-
-	Kai is thinking...
-	Kai decided to stay.
-
---- It is Izzy's turn. ---
-
-	Izzy's hand: Face down Card, Five of Diamonds (Visible Value: 5)
-
-	Izzy is thinking...
-	Izzy decided to hit!
-	Izzy received the card: King of Hearts
-	Visible Hand Value: 15
-
-	Izzy is thinking...
-	Izzy decided to stay.
-
---- It is Milan's turn. ---
-
-	Milan's hand: Face down Card, Three of Diamonds (Visible Value: 3)
-
-	Milan is thinking...
-	Milan decided to hit!
-	Milan received the card: Six of Clubs
-	Visible Hand Value: 9
-
-	Milan is thinking...
-	Milan decided to stay.
-
---- It is Professor Allison's turn. ---
-
-	Professor Allison's hand: Face down Card, Queen of Spades (Visible Value: 10)
-
-	Professor Allison is thinking...
-	Professor Allison decided to stay.
-
---- It is Professor Allison's turn. ---
-
-	Professor Allison's hand: Face down Card, Three of Hearts (Visible Value: 3)
-
-	Professor Allison is thinking...
-	Professor Allison decided to hit!
-	Professor Allison received the card: Jack of Diamonds
-	Visible Hand Value: 13
-
-	Professor Allison is thinking...
-	Professor Allison decided to stay.
-====================================
-   Welcome to BlackJack!
-      created by Benjamin Wong
-====================================
-
-Would you like to Play (y/n)? y
-What is your name? Ben
-
-=====================================
-   === GAME 1 ===
-=====================================
-
-Welcome, Ben!
-
-The game defaults to TWO players, You and the House.
-How many additional AI players do you want? 4
-Starting a game with 4 additional players...
-
---- House's Hand ---
-
-	The House's hand: Face down Card, Ten of Diamonds (Visible Value: 10)
-
---- It is your turn. ---
-
-	Ben's hand: Seven of Hearts, Ace of Diamonds (Visible Value: 18)
-
-	Would you like to hit (y/n)? 
-	You decided to stay.
-	Would you like to hit (y/n)? 
-	You decided to stay.
-	Would you like to hit (y/n)? n
-	You decided to stay.
-
---- It is Donald Bren's turn. ---
-
-	Donald Bren's hand: Face down Card, Ten of Clubs (Visible Value: 10)
-
-	Donald Bren is thinking...
-	Donald Bren decided to stay.
-
---- It is Kai's turn. ---
-
-	Kai's hand: Face down Card, Jack of Clubs (Visible Value: 10)
-
-	Kai is thinking...
-	Kai decided to stay.
-
---- It is Gabe Newell's turn. ---
-
-	Gabe Newell's hand: Face down Card, Four of Hearts (Visible Value: 4)
-
-	Gabe Newell is thinking...
-	Gabe Newell decided to hit!
-	Gabe Newell received the card: Seven of Clubs
-	Visible Hand Value: 11
-
-	Gabe Newell is thinking...
-	Gabe Newell decided to stay.
-====================================
-   Welcome to BlackJack!
-      created by Benjamin Wong
-====================================
-
-Would you like to Play (y/n)? y
-What is your name? Ben
-
-=====================================
-   === GAME 1 ===
-=====================================
-
-Welcome, Ben!
-
-The game defaults to TWO players, You and the House.
-How many additional AI players do you want? 4
-Starting a game with 4 additional players...
-
---- House's Hand ---
-
-	The House's hand: Face down Card, Ten of Hearts (Visible Value: 10)
-
---- It is your turn. ---
-
-	Ben's hand: Two of Hearts, Two of Spades (Visible Value: 4)
-
-	Would you like to hit (y/n)? 
-	You decided to stay.
-	Would you like to hit (y/n)? n
-	You decided to stay.
-
---- It is Donald Bren's turn. ---
-
-	Donald Bren's hand: Face down Card, King of Clubs (Visible Value: 10)
-
-	Donald Bren is thinking...
-	Donald Bren decided to stay.
-
---- It is Milan's turn. ---
-
-	Milan's hand: Face down Card, Nine of Spades (Visible Value: 9)
-
-	Milan is thinking...
-	Milan decided to stay.
-
---- It is Justin's turn. ---
-
-	Justin's hand: Face down Card, Five of Hearts (Visible Value: 5)
-
-	Justin is thinking...
-	Justin decided to hit!
-	Justin received the card: Five of Clubs
-	Visible Hand Value: 10
-
-	Justin is thinking...
-	Justin decided to hit!
-	Justin received the card: Ace of Hearts
-	Visible Hand Value: 21
-
-	Justin is thinking...
-	Justin decided to stay.
-====================================
-   Welcome to BlackJack!
-      created by Benjamin Wong
-====================================
-
-Would you like to Play (y/n)? y
-What is your name? Ben
-
-=====================================
-   === GAME 1 ===
-=====================================
-
-Welcome, Ben!
-
-The game defaults to TWO players, You and the House.
-How many additional AI players do you want? 5
-Starting a game with 5 additional players...
-
---- House's Hand ---
-
-	The House's hand: Face down Card, Seven of Spades (Visible Value: 7)
-
---- It is your turn. ---
-
-	Ben's hand: Five of Hearts, Two of Clubs (Visible Value: 7)
-
-	Would you like to hit (y/n)? n
-	You decided to stay.
-
---- It is Kai's turn. ---
-
-	Kai's hand: Face down Card, Seven of Hearts (Visible Value: 7)
-
-	Kai is thinking...
-	Kai decided to hit!
-	Kai received the card: Seven of Clubs
-	Visible Hand Value: 14
-
-	Kai busted!
-
---- It is Shri's turn. ---
-
-	Shri's hand: Face down Card, Eight of Diamonds (Visible Value: 8)
-
-	Shri is thinking...
-	Shri decided to stay.
-
---- It is Gabe Newell's turn. ---
-
-	Gabe Newell's hand: Face down Card, Jack of Spades (Visible Value: 10)
-
-	Gabe Newell is thinking...
-	Gabe Newell decided to hit!
-	Gabe Newell received the card: Two of Spades
-	Visible Hand Value: 12
-
-	Gabe Newell is thinking...
-	Gabe Newell decided to stay.
-
---- It is Justin's turn. ---
-
-	Justin's hand: Face down Card, Queen of Spades (Visible Value: 10)
-
-	Justin is thinking...
-	Justin decided to stay.
 
 --- It is Donald Bren's turn. ---
 
@@ -716,7 +182,7 @@ Starting a game with 5 additional players...
 
 --- It is The House's turn. ---
 
-	The House's hand: Face down Card, Seven of Spades (Visible Value: 7)
+	The House's hand: Face down Card, Jack of Spades (Visible Value: 10)
 
 	The House is thinking...
 	The House decided to stay.
@@ -725,41 +191,75 @@ Starting a game with 5 additional players...
    === RESULTS ===
 =====================================
 
-The House's hand was valued at 18!
+The House's hand was valued at 19!
 
 === Winners ===
-Shri (Hand: 19)
-Justin (Hand: 20)
+Donald Bren (Hand: 20)
 
 === Busted Players ===
-Kai (Hand: 22)
+None
 
 === Everyone Else ===
-Ben (Hand: 7)
-Gabe Newell (Hand: 16)
-Donald Bren (Hand: 18)
+Benjamin (Hand: 16)
+
+Would you like to play another (y/n)? 
+Invalid response. Please input (y/n)!
+
+Would you like to play another (y/n)? y
+
+=====================================
+   === GAME 4 ===
+=====================================
+
+Welcome, Benjamin!
+
+The game defaults to TWO players, You and the House.
+How many additional AI players do you want? 0
+Starting a game with 0 additional players...
+
+--- House's Hand ---
+
+	The House's hand: Face down Card, Queen of Spades (Visible Value: 10)
+
+--- It is your turn. ---
+
+	Benjamin's hand: Eight of Hearts, King of Spades (Visible Value: 18)
+
+	Would you like to hit (y/n)? n
+	You decided to stay.
+
+--- It is The House's turn. ---
+
+	The House's hand: Face down Card, Queen of Spades (Visible Value: 10)
+
+	The House is thinking...
+	The House decided to hit!
+	The House received the card: Nine of Diamonds
+	Visible Hand Value: 19
+
+	The House busted!
+
+=====================================
+   === RESULTS ===
+=====================================
+
+The House's hand was valued at 24!
+
+=== Winners ===
+Benjamin (Hand: 18)
+
+=== Busted Players ===
+The House (Hand: 24)
+
+=== Everyone Else ===
+None
 
 Would you like to play another (y/n)? n
 
-Today Ben, you won 0 out of 1 games.
-Thats a 0% win rate. May you find better luck elsewhere.
+Today Benjamin, you won 2 out of 4 games.
+Thats a 50% win rate. Nice!
 Goodbye!
 ====================================
-   Welcome to BlackJack!
-      created by Benjamin Wong
-====================================
-
-Would you like to Play (y/n)? y
-What is your name? Benj
-
-=====================================
-   === GAME 1 ===
-=====================================
-
-Welcome, Benj!
-
-The game defaults to TWO players, You and the House.
-How many additional AI players do you want? ====================================
    Welcome to BlackJack!
       created by Benjamin Wong
 ====================================
@@ -774,21 +274,59 @@ What is your name? Ben
 Welcome, Ben!
 
 The game defaults to TWO players, You and the House.
-How many additional AI players do you want? 4
-Starting a game with 4 additional players...
+How many additional AI players do you want? 0
+Starting a game with 0 additional players...
 
 --- House's Hand ---
 
-	The House's hand: Face down Card, Four of Spades (Visible Value: 4)
+	The House's hand: Face down Card, Eight of Spades (Visible Value: 8)
 
 --- It is your turn. ---
 
-	Ben's hand: Ace of Spades, Nine of Diamonds (Visible Value: 20)
+	Ben's hand: Ace of Diamonds, Two of Spades (Visible Value: 13)
 
-	Would you like to hit (y/n)? ====================================
+	Would you like to hit (y/n)? y
+	You decided to hit!
+	You received the card: Ten of Spades
+	Visible Hand Value: 13
+
+	Would you like to hit (y/n)? y
+	You decided to hit!
+	You received the card: Seven of Spades
+	Visible Hand Value: 20
+
+	Would you like to hit (y/n)? n
+	You decided to stay.
+
+--- It is The House's turn. ---
+
+	The House's hand: Face down Card, Eight of Spades (Visible Value: 8)
+
+	The House is thinking...
+	The House decided to stay.
+   === RESULTS ===
+The House's hand was valued at 18!
+
+=== Winners ===
+Ben (Hand: 20)
+
+=== Busted Players ===
+None
+
+=== Everyone Else ===
+None
+
+Would you like to play another (y/n)? ====================================
    Welcome to BlackJack!
       created by Benjamin Wong
 ====================================
+
+Would you like to Play (y/n)? ############################################
+#                                          #
+#       Welcome to BlackJack!              #
+#           created by Benjamin Wong       #
+#                                          #
+############################################
 
 Would you like to Play (y/n)? y
 What is your name? Benjamin
@@ -800,8 +338,8 @@ What is your name? Benjamin
 Welcome, Benjamin!
 
 The game defaults to TWO players, You and the House.
-How many additional AI players do you want? 4
-Starting a game with 4 additional players...
+How many additional AI players do you want? 0
+Starting a game with 0 additional players...
 
 --- House's Hand ---
 
@@ -809,331 +347,40 @@ Starting a game with 4 additional players...
 
 --- It is your turn. ---
 
-	Benjamin's hand: Four of Diamonds, Three of Spades (Visible Value: 7)
+	Benjamin's hand: Five of Spades, Eight of Clubs (Visible Value: 13)
+
+	Would you like to hit (y/n)? y
+	You decided to hit!
+	You received the card: Eight of Hearts
+	Visible Hand Value: 21
 
 	Would you like to hit (y/n)? n
 	You decided to stay.
-
---- It is Justin's turn. ---
-
-	Justin's hand: Face down Card, Six of Spades (Visible Value: 6)
-
-	Justin is thinking...
-	Justin decided to stay.
-
---- It is Gabe Newell's turn. ---
-
-	Gabe Newell's hand: Face down Card, Three of Diamonds (Visible Value: 3)
-
-	Gabe Newell is thinking...
-	Gabe Newell decided to hit!
-	Gabe Newell received the card: Five of Hearts
-	Visible Hand Value: 8
-
-	Gabe Newell is thinking...
-	Gabe Newell decided to stay.
-
---- It is Shri's turn. ---
-
-	Shri's hand: Face down Card, Ace of Spades (Visible Value: 11)
-
-	Shri is thinking...
-	Shri decided to stay.
-
---- It is Daniel's turn. ---
-
-	Daniel's hand: Face down Card, Ace of Clubs (Visible Value: 11)
-
-	Daniel is thinking...
-	Daniel decided to hit!
-	Daniel received the card: Three of Hearts
-	Visible Hand Value: 14
-
-	Daniel is thinking...
-	Daniel decided to stay.
-====================================
-   Welcome to BlackJack!
-      created by Benjamin Wong
-====================================
-
-Would you like to Play (y/n)? y
-What is your name? 5
-
-=====================================
-   === GAME 1 ===
-=====================================
-
-Welcome, 5!
-
-The game defaults to TWO players, You and the House.
-How many additional AI players do you want? 5
-Starting a game with 5 additional players...
-
---- House's Hand ---
-
-	The House's hand: Face down Card, Ace of Diamonds (Visible Value: 11)
-
---- It is your turn. ---
-
-	5's hand: Three of Diamonds, Nine of Hearts (Visible Value: 12)
-
-	Would you like to hit (y/n)? n
-	You decided to stay.
-
---- It is Shri's turn. ---
-
-	Shri's hand: Face down Card, Jack of Diamonds (Visible Value: 10)
-
-	Shri is thinking...
-	Shri decided to hit!
-	Shri received the card: Nine of Clubs
-	Visible Hand Value: 19
-
-	Shri busted!
-
---- It is Gabe Newell's turn. ---
-
-	Gabe Newell's hand: Face down Card, Seven of Spades (Visible Value: 7)
-
-	Gabe Newell is thinking...
-	Gabe Newell decided to hit!
-	Gabe Newell received the card: Ten of Hearts
-	Visible Hand Value: 17
-
-	Gabe Newell is thinking...
-	Gabe Newell decided to stay.
-
---- It is Warat's turn. ---
-
-	Warat's hand: Face down Card, Jack of Hearts (Visible Value: 10)
-
-	Warat is thinking...
-	Warat decided to stay.
-
---- It is Donald Bren's turn. ---
-
-	Donald Bren's hand: Face down Card, Queen of Diamonds (Visible Value: 10)
-
-	Donald Bren is thinking...
-	Donald Bren decided to stay.
-
---- It is Milan's turn. ---
-
-	Milan's hand: Face down Card, Four of Spades (Visible Value: 4)
-
-	Milan is thinking...
-	Milan decided to hit!
-	Milan received the card: Jack of Spades
-	Visible Hand Value: 14
-
-	Milan busted!
 
 --- It is The House's turn. ---
 
-	The House's hand: Face down Card, Ace of Diamonds (Visible Value: 11)
-
-	The House is thinking...
-	The House decided to hit!
-	The House received the card: Seven of Diamonds
-	Visible Hand Value: 18
+	The House's hand: Face down Card, Ten of Spades (Visible Value: 10)
 
 	The House is thinking...
 	The House decided to stay.
 
-=====================================
-   === RESULTS ===
-=====================================
+---------------
+--- RESULTS ---
+---------------
 
-The House's hand was valued at 20!
+The House's hand was valued at 18!
 
 === Winners ===
-Warat (Hand: 21)
+Benjamin (Hand: 21)
 
 === Busted Players ===
-Shri (Hand: 24)
-Milan (Hand: 24)
+None
 
 === Everyone Else ===
-5 (Hand: 12)
-Gabe Newell (Hand: 20)
-Donald Bren (Hand: 16)
+None
 
 Would you like to play another (y/n)? n
 
-Today 5, you won 0 out of 1 games.
-Thats a 0% win rate. May you find better luck elsewhere.
-Goodbye!
-====================================
-   Welcome to BlackJack!
-      created by Benjamin Wong
-====================================
-
-Would you like to Play (y/n)? y
-What is your name? Ben
-
-=====================================
-   === GAME 1 ===
-=====================================
-
-Welcome, Ben!
-
-The game defaults to TWO players, You and the House.
-How many additional AI players do you want? 55
-Maximum of 5 additional players allowed!
-
-How many additional AI players do you want? 5
-Starting a game with 5 additional players...
-
---- House's Hand ---
-
-	The House's hand: Face down Card, Ace of Hearts (Visible Value: 11)
-
---- It is your turn. ---
-
-	Ben's hand: Three of Clubs, Queen of Spades (Visible Value: 13)
-
-	Would you like to hit (y/n)? n
-	You decided to stay.
-
---- It is Daniel's turn. ---
-
-	Daniel's hand: Face down Card, Two of Spades (Visible Value: 2)
-
-	Daniel is thinking...
-	Daniel decided to hit!
-	Daniel received the card: Nine of Diamonds
-	Visible Hand Value: 11
-
-	Daniel is thinking...
-	Daniel decided to hit!
-	Daniel received the card: Seven of Diamonds
-	Visible Hand Value: 18
-
-	Daniel is thinking...
-	Daniel decided to stay.
-
---- It is Miles's turn. ---
-
-	Miles's hand: Face down Card, Two of Hearts (Visible Value: 2)
-
-	Miles is thinking...
-	Miles decided to hit!
-	Miles received the card: Eight of Hearts
-	Visible Hand Value: 10
-
-	Miles is thinking...
-	Miles decided to stay.
-
---- It is Kai's turn. ---
-
-	Kai's hand: Face down Card, Three of Diamonds (Visible Value: 3)
-
-	Kai is thinking...
-	Kai decided to hit!
-	Kai received the card: Eight of Spades
-	Visible Hand Value: 11
-
-	Kai is thinking...
-	Kai decided to stay.
-
---- It is Shri's turn. ---
-
-	Shri's hand: Face down Card, Six of Clubs (Visible Value: 6)
-
-	Shri is thinking...
-	Shri decided to hit!
-	Shri received the card: Jack of Hearts
-	Visible Hand Value: 16
-
-	Shri is thinking...
-	Shri decided to stay.
-
---- It is Gabe Newell's turn. ---
-
-	Gabe Newell's hand: Face down Card, Five of Clubs (Visible Value: 5)
-
-	Gabe Newell is thinking...
-	Gabe Newell decided to hit!
-	Gabe Newell received the card: Jack of Spades
-	Visible Hand Value: 15
-
-	Gabe Newell busted!
-====================================
-   Welcome to BlackJack!
-      created by Benjamin Wong
-====================================
-
-Would you like to Play (y/n)? y
-What is your name? Ben
-
-=====================================
-   === GAME 1 ===
-=====================================
-
-Welcome, Ben!
-
-The game defaults to TWO players, You and the House.
-How many additional AI players do you want? 5
-Starting a game with 5 additional players...
-
---- House's Hand ---
-
-	The House's hand: Face down Card, Two of Hearts (Visible Value: 2)
-
---- It is your turn. ---
-
-	Ben's hand: Two of Diamonds, Three of Spades (Visible Value: 5)
-
-	Would you like to hit (y/n)? n
-	You decided to stay.
-
---- It is Donald Bren's turn. ---
-
-	Donald Bren's hand: Face down Card, Ten of Diamonds (Visible Value: 10)
-
-	Donald Bren is thinking...
-	Donald Bren decided to hit!
-	Donald Bren received the card: Queen of Diamonds
-	Visible Hand Value: 20
-
-	Donald Bren busted!
-
---- It is Milan's turn. ---
-
-	Milan's hand: Face down Card, Ace of Hearts (Visible Value: 11)
-
-	Milan is thinking...
-	Milan decided to hit!
-	Milan received the card: Six of Clubs
-	Visible Hand Value: 17
-
-	Milan is thinking...
-	Milan decided to stay.
-
---- It is Donald Bren's turn. ---
-
-	Donald Bren's hand: Face down Card, Queen of Clubs (Visible Value: 10)
-
-	Donald Bren is thinking...
-	Donald Bren decided to hit!
-	Donald Bren received the card: Ace of Spades
-	Visible Hand Value: 21
-
-	Donald Bren is thinking...
-	Donald Bren decided to hit!
-	Donald Bren received the card: Five of Clubs
-	Visible Hand Value: 16
-
-	Donald Bren is thinking...
-	Donald Bren decided to stay.
-
---- It is Shri's turn. ---
-
-	Shri's hand: Face down Card, Nine of Hearts (Visible Value: 9)
-
-	Shri is thinking...
-	Shri decided to hit!
-	Shri received the card: Eight of Hearts
-	Visible Hand Value: 17
-
-	Shri busted!
+Today Benjamin, you won 1 out of 1 games.
+Thats a 100% win rate. You are Incredible!!!
+Goodbye! (Enter to Quit)

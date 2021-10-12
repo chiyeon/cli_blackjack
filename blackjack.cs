@@ -5,6 +5,11 @@ using System.Linq;
 
 namespace BlackJack {
 
+    /* record class
+     * has static functions similar to those in the Console
+     * class like WriteLine, ReadLine...
+     * does as they do but also writes to a file
+     */
     class Record {
         /* choosing to store to a local directory instead of
          * global one, something like
@@ -52,24 +57,25 @@ namespace BlackJack {
         }
     }
 
+    /* 
+     * contains main method and main game loop
+     */
     class BlackJack {
-        
-
         public static void Main(string[] args) {
-            
 
             string playerName = "";
-            int numAdditionalPlayers = 0;
-            bool validNumPlayers = false;
             int numGames = 0;
             int winningGames = 0;
 
-            Record.WriteLine("====================================");
-            Record.WriteLine("   Welcome to BlackJack!");
-            Record.WriteLine("      created by Benjamin Wong");
-            Record.WriteLine("====================================");
+            Record.WriteLine("############################################");
+            Record.WriteLine("#                                          #");
+            Record.WriteLine("#       Welcome to BlackJack!              #");
+            Record.WriteLine("#           created by Benjamin Wong       #");
+            Record.WriteLine("#                                          #");
+            Record.WriteLine("############################################");
             Record.WriteLine("");
 
+            // request to start game loop
             string input = "";
             do {
                 Record.Write("Would you like to Play (y/n)? ");
@@ -86,6 +92,7 @@ namespace BlackJack {
                 }
             } while(input != "y");
 
+            // take player name
             do {
                 Record.Write("What is your name? ");
                 playerName = Record.ReadLine();
@@ -94,12 +101,13 @@ namespace BlackJack {
                     Record.WriteLine("Please input a valid player name!\n");
             } while(playerName == "");
 
+            // main game loop
             bool gameOver = false;
             do {
                 numGames++;
 
-                numAdditionalPlayers = 0;
-                validNumPlayers = false;
+                int numAdditionalPlayers = 0;
+                bool validNumPlayers = false;
 
                 Record.WriteLine("\n=====================================");
                 Record.WriteLine("   === GAME {0} ===", numGames);
@@ -129,6 +137,8 @@ namespace BlackJack {
 
                 Record.WriteLine("Starting a game with {0} additional players...\n", numAdditionalPlayers);
 
+                // all game logic is here, in the Game class instance
+                // returns true/false depending on whether or not player won the game
                 if(new Game(playerName, numAdditionalPlayers).Play()) {
                     winningGames++;
                 }
@@ -162,13 +172,15 @@ namespace BlackJack {
                 Record.WriteLine("May you find better luck elsewhere.");
             }
 
-            Record.WriteLine("Goodbye!");
+            Record.Write("Goodbye! (Enter to Quit)");
             Console.ReadLine();
             // wait for user to quit
         }
     }
 
     class Card {
+        // i wanted to use bit shifting n stuff for data hmm
+        // but oop is probably cleaner
         public enum Value { Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King }
         public enum Suit { Spades, Diamonds, Clubs, Hearts }
 
@@ -190,7 +202,7 @@ namespace BlackJack {
             if (value == Value.Ace) {
                 return 11;
             } else {
-                // this requires .NET Core 2.0
+                // Math.Clamp requires .NET Core 2.0
                 // not on windows by default
                 // return Math.Clamp((int)value + 1, 1, 10);
                 return (int)value + 1 > 10 ? 10 : (int)value + 1;
@@ -349,10 +361,10 @@ namespace BlackJack {
             // following assumes startingHand has 2 cards
             startingHand[0].SetFaceUp(false);
             startingHand[1].SetFaceUp(true);
-
-            name = "The House";
             foreach(Card c in startingHand)
                 hand.Add(c);
+
+            name = "The House";
         }
     }
 
@@ -378,11 +390,11 @@ namespace BlackJack {
             // following assumes startingHand has 2 cards
             startingHand[0].SetFaceUp(false);
             startingHand[1].SetFaceUp(true);
+            foreach(Card c in startingHand)
+                hand.Add(c);
             
             Random rand = new Random(Guid.NewGuid().GetHashCode());
             name = names[rand.Next(names.Length)];
-            foreach(Card c in startingHand)
-                hand.Add(c);
         }
     }
 
@@ -398,6 +410,7 @@ namespace BlackJack {
             players.Add(new House(deck.GetTopCards(2)));
         }
 
+        // returns t/f depending on player win or not
         public bool Play() {
             //Record.WriteLine("The deck has {0} cards left.", deck.cards.Count);
             //Record.WriteLine("There are {0} players left.\n", GetNumberOfActivePlayers());
@@ -405,16 +418,20 @@ namespace BlackJack {
             Record.WriteLine("--- House's Hand ---");
             Record.WriteLine("\n\t{0}", players[players.Count - 1].GetHandStatus());
 
+            // iterate thru each player until they bust or stay
             foreach(Player p in players) {
                 if(p.isBusted)
                     continue;
 
+                // player gets manual control
                 if (p.GetType() == typeof(Player)) {
                     Record.WriteLine("--- It is your turn. ---\n");
 
                     Record.WriteLine("\t{0}", p.GetHandStatus());
 
                     string input = "";
+
+                    // hit/stay loop
                     do {
                         Record.Write("\tWould you like to hit (y/n)? ");
                         input = Record.ReadLine().ToLower();
@@ -437,6 +454,9 @@ namespace BlackJack {
                             Record.WriteLine("Invalid input!\n");
                         }
                     } while(input != "n");
+                // computer controller bot.
+                // very simple ai.
+                // todo: diff difficulties depending on name ?
                 } else {
                     bool botHitting = true;
                     Record.WriteLine("\n--- It is {0}'s turn. ---\n", p.name);
@@ -475,69 +495,65 @@ namespace BlackJack {
                 }
             }
 
-            Record.WriteLine("\n=====================================");
-            Record.WriteLine("   === RESULTS ===");
-            Record.WriteLine("=====================================\n");
+            // game over
 
+            Record.WriteLine("\n---------------");
+            Record.WriteLine("--- RESULTS ---");
+            Record.WriteLine("---------------\n");
+
+            // house hand
             int houseValue = players[players.Count - 1].GetHandValue(true);
             Record.WriteLine("The House's hand was valued at {0}!\n", houseValue);
 
-            int count = 0;
-
+            // winners
             var winners = 
                 from p in players
                 where !p.isBusted && ((p.GetHandValue(true) > houseValue) || (houseValue > 21 && p.name != "The House"))
                 select p;
-            
+
             Record.WriteLine("=== Winners ===");
-            count = 0;
+
             if(winners.Count() == 0) {
-                Record.Write("None\n");
+                Record.WriteLine("None");
             } else {
                 foreach(Player p in winners) {
-                    count++;
-                    Record.Write("{0} (Hand: {1})", p.name, p.GetHandValue(true));
-                    //if(count != winners.Count())
-                        Record.Write("\n");
+                    Record.WriteLine("{0} (Hand: {1})", p.name, p.GetHandValue(true));
                 }
             }
 
+            // busted players
             var bustedPlayers = 
                 from p in players
                 where p.isBusted == true
                 select p;
 
             Record.WriteLine("\n=== Busted Players ===");
-            count = 0;
+
             if(bustedPlayers.Count() == 0) {
-                Record.Write("None\n");
+                Record.WriteLine("None");
             } else {
                 foreach(Player p in bustedPlayers) {
-                    count++;
-                    Record.Write("{0} (Hand: {1})", p.name, p.GetHandValue(true));
-                    //if(count != bustedPlayers.Count())
-                        Record.Write("\n");
+                    Record.WriteLine("{0} (Hand: {1})", p.name, p.GetHandValue(true));
                 }
             }
 
+            // other players
             var everyoneElse =
                 from p in players
                 where !p.isBusted && p.GetHandValue(true) <= houseValue && p.name != "The House" && houseValue <= 21
                 select p;
             
             Record.WriteLine("\n=== Everyone Else ===");
-            count = 0;
+
             if(everyoneElse.Count() == 0) {
-                Record.Write("None\n");
+                Record.WriteLine("None");
             } else {
                 foreach(Player p in everyoneElse) {
-                    count++;
-                    Record.Write("{0} (Hand: {1})", p.name, p.GetHandValue(true));
-                    //if(count != everyoneElse.Count())
-                        Record.Write("\n");
+                    Record.WriteLine("{0} (Hand: {1})", p.name, p.GetHandValue(true));
                 }
             }
 
+            // check if player won, return tru/false accordingly
             if(winners.Contains(players[0])) {
                 return true;
             } else {
