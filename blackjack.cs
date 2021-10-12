@@ -425,13 +425,13 @@ namespace BlackJack {
                 // ensure no duplicate names exist
                 bool foundDuplicate = false;
                 do {
+                    foundDuplicate = false;
                     foreach(Player p in players) {
                         if(p.name == newPlayer.name) {
                             newPlayer.GenerateName();
                             foundDuplicate = true;
                         }
                     }
-                    foundDuplicate = false;
                 } while(foundDuplicate);
 
                 players.Add(new AIPlayer(deck.GetTopCards(2)));
