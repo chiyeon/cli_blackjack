@@ -107,9 +107,9 @@ namespace BlackJack {
                 Record.Write("What is your name? ");
                 playerName = Record.ReadLine();
 
-                if(playerName == "")
+                if(playerName == "" || playerName == "The House")
                     Record.WriteLine("Please input a valid player name!\n");
-            } while(playerName == "");
+            } while(playerName == "" || playerName == "The House");
 
             // main game loop
             bool gameOver = false;
@@ -434,7 +434,7 @@ namespace BlackJack {
                     }
                 } while(foundDuplicate);
 
-                players.Add(new AIPlayer(deck.GetTopCards(2)));
+                players.Add(newPlayer);
             }
             players.Add(new House(deck.GetTopCards(2)));
         }
