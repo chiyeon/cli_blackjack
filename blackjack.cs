@@ -402,7 +402,11 @@ namespace BlackJack {
             startingHand[1].SetFaceUp(true);
             foreach(Card c in startingHand)
                 hand.Add(c);
-            
+
+            GenerateName();
+        }
+
+        public void GenerateName() {
             Random rand = new Random(Guid.NewGuid().GetHashCode());
             name = names[rand.Next(names.Length)];
         }
@@ -415,8 +419,23 @@ namespace BlackJack {
         public Game(string playerName, int numAdditionalPlayers) {
             deck = new Deck(true);
             players.Add(new Player(playerName, deck.GetTopCards(2)));
-            for(int i = 0; i < numAdditionalPlayers; i++)
+            for(int i = 0; i < numAdditionalPlayers; i++) {
+                AIPlayer newPlayer = new AIPlayer(deck.GetTopCards(2));
+
+                // ensure no duplicate names exist
+                bool foundDuplicate = false;
+                do {
+                    foreach(Player p in players) {
+                        if(p.name == newPlayer.name) {
+                            newPlayer.GenerateName();
+                            foundDuplicate = true;
+                        }
+
+                    }
+                } while(foundDuplicate);
+
                 players.Add(new AIPlayer(deck.GetTopCards(2)));
+            }
             players.Add(new House(deck.GetTopCards(2)));
         }
 
