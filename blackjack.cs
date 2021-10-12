@@ -430,8 +430,8 @@ namespace BlackJack {
                             newPlayer.GenerateName();
                             foundDuplicate = true;
                         }
-
                     }
+                    foundDuplicate = false;
                 } while(foundDuplicate);
 
                 players.Add(new AIPlayer(deck.GetTopCards(2)));
