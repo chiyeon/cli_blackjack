@@ -15,5 +15,6 @@ included is a record for 20 games/rounds of play
  - mcs
  - mono
 
-**command**
+**command:**
+
 `mcs -out:blackjack.exe blackjack.cs && mono blackjack.exe`
